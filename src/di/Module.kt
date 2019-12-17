@@ -1,5 +1,6 @@
 package backend.di
 
+import backend.repository.HWRepository
 import backend.repository.HelloWorldRepository
 import backend.service.HelloWorldService
 import backend.service.HelloWorldServiceImpl
@@ -10,8 +11,8 @@ import org.koin.dsl.module
  * This instances could be injected now, applying the dependency inversion principle.
  */
 val myModule = module {
+    // Declares a singleton of repository instance
+    single { HelloWorldRepository() as HWRepository }
     // Creates a singleton instance of HelloWorldServiceImpl as a HelloWorldService,  auto-injecting it the HelloWorldRepository instance
     single { HelloWorldServiceImpl(get()) as HelloWorldService}
-    // Declares a singleton of repository instance
-    single { HelloWorldRepository() }
 }
