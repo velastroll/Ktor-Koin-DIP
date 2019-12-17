@@ -38,5 +38,6 @@ dependencies {
 
     //koin
     compile "org.koin:koin-ktor:$koin_version"
+    testCompile("org.koin:koin-test:0.9.3")
     
 }

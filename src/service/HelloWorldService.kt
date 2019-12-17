@@ -1,6 +1,6 @@
 package backend.service
 
-import backend.repository.HelloWorldRepository
+import backend.repository.HWRepository
 
 /**
  * This interface is the requested interface by the domain layer.
@@ -14,7 +14,7 @@ interface HelloWorldService {
  * This class is the implementation of the requested interface.
  * This class is the [KoinComponent] child, so it could be injected.
  */
-class HelloWorldServiceImpl(private val repository: HelloWorldRepository) : HelloWorldService{
+class HelloWorldServiceImpl(private val repository: HWRepository) : HelloWorldService{
     override fun getHelloWorld(): String {
         return "> ${repository.get().content}"
     }
